@@ -1,127 +1,142 @@
-<a class="" @@if (catalog === true) {href="index.html"}>
+<a class="logo header__logo" @@if (catalog === true) {href="index.html"}>
     <h1 class="visually-hidden">Интернет-магазин мороженого - GllacyShop</h1>
-    <img class="" src="img/content/logo.svg" alt="Логотип интернет-магазина мороженого -  GllacyShop" width="154" height="64">
+    <img class="logo__pic" src="img/content/logo.svg" alt="Логотип интернет-магазина мороженого -  GllacyShop" width="154" height="64">
 </a>
 
 <h2 class="visually-hidden">Навигация по сайту</h2>
-<nav>
-    <ul>
-        <li>
-            <a @@if (catalog === false) {href="catalog.html"}>Каталог</a>
+<nav class="site-navigation header__site-navigation">
+    <ul class="site-navigation__items-list">
+        <li class="site-navigation__item">
+            <a class="site-navigation__link" @@if (catalog === false) {href="catalog.html"}>Каталог</a>
     
-            <p>Новинки</p>
-    
-            <ul>
-                <li><a @@if (catalog === false) {href="catalog.html"}>Сливочное</a></li>
-                <li><a href="#">Щербеты</a></li>
-                <li><a href="#">Фруктовый лед</a></li>
-                <li><a href="#">Мелорин</a></li>
-            </ul>
+            <div class="items-sublist site-navigation__items-sublist">
+                <p class="items-sublist__title">Новинки</p>
+        
+                <ul class="items-sublist__items-list">
+                    <li class="items-sublist__item">
+                        <a class="items-sublist__link" @@if (catalog === false) {href="catalog.html"}>Сливочное</a>
+                    </li>
+
+                    <li class="items-sublist__item">
+                        <a class="items-sublist__link" href="#">Щербеты</a>
+                    </li>
+
+                    <li class="items-sublist__item">
+                        <a class="items-sublist__link" href="#">Фруктовый лед</a>
+                    </li>
+
+                    <li class="items-sublist__item">
+                        <a class="items-sublist__link" href="#">Мелорин</a>
+                    </li>
+                </ul>
+            </div>
         </li>
     
-        <li><a href="#">Доставка и оплата</a></li>
+        <li class="site-navigation__item">
+            <a class="site-navigation__link" href="#">Доставка и оплата</a>
+        </li>
     
-        <li><a href="#">О компании</a></li>
+        <li class="site-navigation__item">
+            <a class="site-navigation__link" href="#">О компании</a>
+        </li>
     </ul>
 </nav>
 
 <h2 class="visually-hidden">Пользовательские действия</h2>
-<ul>
-    <li>
+<ul class="user-actions-list header__user-actions-list">
+    <li class="site-search-form user-actions-list__item">
         <span class="visually-hidden">Поиск по сайту</span>
-        <button><span class="visually-hidden">Показать/Скрыть поле поиска</span></button>
+        <button class="site-search-form__button user-actions__button">
+            <span class="visually-hidden">Показать/Скрыть поле поиска</span>
+        </button>
 
         <span class="visually-hidden">Поле поиска</span>
-        <form action="https://echo.htmlacademy.ru" method="get">
-            <label for="">
-                Поисковый запрос:
-                <input type="search" name="q" id="" placeholder="Крем-брюле" required>
-            </label>
+        <form class="site-search-form__form" action="https://echo.htmlacademy.ru" method="get">
+            <label class="visually-hidden" for="site-search-form-query">Поисковый запрос:</label>
+            <input class="site-search-form__input" type="search" name="q" id="site-search-form-query" placeholder="Крем-брюле" required>
         </form>
     </li>
 
-    <li>
+    <li class="account-login-form user-actions-list__item">
         <span class="visually-hidden">Аккаунт</span>
-        <a href="#">Вход</a>
+        <a class="account-login-form__button user-actions__button" href="#">Вход</a>
 
         <span class="visually-hidden">Форма входа в аккаунт</span>
-        <form action="https://echo.htmlacademy.ru" method="post">
-            <label for="">
-                Ваш e-mail:
-                <input type="email" name="email" id="" placeholder="email@example.com" required>
-            </label>
+        <form class="account-login-form__form" action="https://echo.htmlacademy.ru" method="post">
+            <label class="visually-hidden" for="account-login-form-email">Ваш e-mail:</label>
+            <input type="email" name="email" id="account-login-form-email" placeholder="email@example.com" required>
             
-            <label for="">
-                Ваш пароль:
-                <input type="password" name="password" id="" placeholder="••••••" required>
-            </label>
+            <label class="visually-hidden" for="account-login-form-password">Ваш пароль:</label>
+            <input type="password" name="password" id="account-login-form-password" placeholder="••••••" required>
 
-            <button type="submit">Войти</button>
+            <button class="button account-login-form__login" type="submit">Войти</button>
 
-            <a href="#">Забыли пароль?</a>
-            <a href="#">Новая регистрация</a>
+            <a class="account-login-form__link" href="#">Забыли пароль?</a>
+            <a class="account-login-form__link" href="#">Новая регистрация</a>
         </form>
     </li>
 
-    <li>
+    <li class="user-cart-info user-actions-list__item">
         <span class="visually-hidden">Корзина</span>
-        <a @@if (catalog === true) {href="#"}>2 товара</a>
+        <a class="user-cart-info__button user-actions__button" @@if (catalog === true) {href="#"}>2 товара</a>
 
         @@if (catalog === true)
         {
             <span class="visually-hidden">Содержимое корзины</span>
-            <table>
-                <tr>
-                    <th>Удалить товар из корзины</th>
-                    <th>Фото товара</th>
-                    <th>Название товара</th>
-                    <th>Вес товара</th>
-                    <th>Стоимость товара (за кг)</th>
-                    <th>Итоговая стоимость</th>
-                </tr>
-    
-                <tr>
-                    <td>
-                        <button type="button">
-                            <span class="visually-hidden">Удалить товар из корзины</span>
-                        </button>
-                    </td>
-    
-                    <td>
-                        <img class="" src="img/content/ice-cream-yellow.png" alt="Фото пломбира с апельсиновым джемом" width="33" height="33">
-                    </td>
-    
-                    <td>Пломбир с апельсиновым джемом</td>
-    
-                    <td>1,5 кг</td>
-                    <td>200 руб.</td>
+            <div class="user-cart-info__popup">
+                <table class="cart-items-table user-cart-info__items-table">
+                    <tr class="visually-hidden">
+                        <th>Удалить товар из корзины</th>
+                        <th>Фото товара</th>
+                        <th>Название товара</th>
+                        <th>Вес товара</th>
+                        <th>Стоимость товара (за кг)</th>
+                        <th>Итоговая стоимость</th>
+                    </tr>
+        
+                    <tr class="cart-items-table__item">
+                        <td class="cart-items-table__item-remove">
+                            <button class="cart-items-table__item-remove-button" type="button">
+                                <span class="visually-hidden">Удалить товар из корзины</span>
+                            </button>
+                        </td>
+        
+                        <td class="cart-items-table__item-view">
+                            <img class="cart-items-table__item-view-pic" src="img/content/ice-cream-yellow.png" alt="Фото пломбира с апельсиновым джемом" width="33" height="33">
+                        </td>
+        
+                        <td class="cart-items-table__item-name">Пломбир с апельсиновым джемом</td>
+        
+                        <td class="cart-items-table__item-weight">1,5 кг</td>
+                        <td class="cart-items-table__item-price">200 руб.</td>
+                        
+                        <td class="cart-items-table__item-total-price">300 руб.</td>
+                    </tr>
                     
-                    <td>300 руб.</td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <button type="button">
-                            <span class="visually-hidden">Удалить товар из корзины</span>
-                        </button>
-                    </td>
-                    
-                    <td>
-                        <img class="" src="img/content/ice-cream-pink.png" alt="Фото клубничного пломбира с присыпкой из белого шоколада" width="33" height="33">
-                    </td>
-                    
-                    <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-                    
-                    <td>1,5 кг</td>
-                    <td>300 руб.</td>
-    
-                    <td>450 руб.</td>
-                </tr>
-            </table>
-    
-            <p><strong>Итого: 750 руб.</strong></p>
-    
-            <a href="#">Оформить заказ</a>
+                    <tr class="cart-items-table__item">
+                        <td class="cart-items-table__item-remove">
+                            <button class="cart-items-table__item-remove-button" type="button">
+                                <span class="visually-hidden">Удалить товар из корзины</span>
+                            </button>
+                        </td>
+                        
+                        <td class="cart-items-table__item-view">
+                            <img class="cart-items-table__item-view-pic" src="img/content/ice-cream-pink.png" alt="Фото клубничного пломбира с присыпкой из белого шоколада" width="33" height="33">
+                        </td>
+                        
+                        <td class="cart-items-table__item-name">Клубничный пломбир с присыпкой из белого шоколада</td>
+                        
+                        <td class="cart-items-table__item-weight">1,5 кг</td>
+                        <td class="cart-items-table__item-price">300 руб.</td>
+        
+                        <td class="cart-items-table__item-total-price">450 руб.</td>
+                    </tr>
+                </table>
+        
+                <p class="user-cart-info__price"><strong>Итого: 750 руб.</strong></p>
+        
+                <a class="button user-cart-info__buy" href="#">Оформить заказ</a>
+            </div>
         }
     </li>
 </ul>
@@ -129,13 +144,28 @@
 @@if (catalog === true)
 {
     <h2 class="visually-hidden">Хлебные крошки</h2>
-    <ol>
-        <li><a href="index.html">Главная</a></li>
-        <li><a>Каталог</a></li>
-        <li><a>Сливочное</a></li>
+    <ol class="breadcrumbs">
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="index.html">Главная</a>
+        </li>
+        
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">Каталог</a>
+        </li>
+        
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">Сливочное</a>
+        </li>
     </ol>
 }
 
 <h2 class="visually-hidden">Дополнительная информация</h2>
-<p><span class="visually-hidden">Мы открыты </span>с 10 до 20, ежедневно</p>
-<a href="tel:+88124502525"><span class="visually-hidden">Наш телефон: </span>8 812 450-25-25</a>
+<div class="additional-info header__additional-info">
+    <p class="additional-info__open-time">
+        <span class="visually-hidden">Мы открыты </span>с 10 до 20, ежедневно
+    </p>
+    
+    <a class="additional-info__phone-number" href="tel:+88124502525">
+        <span class="visually-hidden">Наш телефон: </span>8 812 450-25-25
+    </a>
+</div>
