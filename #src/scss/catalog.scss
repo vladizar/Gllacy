@@ -1,0 +1,365 @@
+.main
+{
+    &__title
+    {
+        margin: -9px 0 29px 0;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 41px;
+    }
+}
+
+.filter
+{
+    &__form
+    {
+        margin-bottom: 41px;
+    }
+}
+
+.filter-form
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    &__fieldset
+    {
+        margin: 0 15px 15px 0;
+        display: block;
+        border: 0;
+        padding: 0;
+
+        &:last-of-type
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &__fieldset-title
+    {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        margin: 0 0 6px 16px;
+        display: block;
+    }
+
+    &__bg-input
+    {
+        background-color: transparentize($color: $color-white, $amount: 0.8);
+        border-radius: 20px;
+    }
+
+    &__select-group
+    {
+        display: flex;
+        align-items: center;
+        padding-right: 14px;
+
+        svg
+        {
+            margin-top: 1px;
+        }
+
+        path
+        {
+            fill: $color-white;
+        }
+    }
+
+    &__input
+    {
+        display: block;
+        line-height: 18px;
+
+        &_select
+        {
+            background-color: transparent;
+            border: 0;
+            color: inherit;
+            font: inherit;
+            font-weight: 500;
+            appearance: none;
+            cursor: pointer;
+            padding: 6px 10px 8px 16px;
+
+            &:hover,
+            &:focus
+            {
+                color: $color-black;
+                
+                & + label path
+                {
+                    fill: $color-black;
+                }
+            }
+        }
+
+        &_radio
+        {
+            &:focus + .filter-form__label
+            {
+                outline: -webkit-focus-ring-color auto 1px;
+                
+                &::before
+                {
+                    opacity: 1;
+                }
+            }
+            
+            &:checked + .filter-form__label::before
+            {
+                background-image: url(../img/background/radio-on.svg);
+            }
+            
+            &:disabled + .filter-form__label::before
+            {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+        }
+        
+        &_checkbox
+        {
+            & + .filter-form__label::before
+            {
+                width: 20px;
+                height: 20px;
+                top: 0;
+                background-image: url(../img/background/checkbox-off.svg);
+            }
+            
+            &:focus + .filter-form__label
+            {
+                outline: -webkit-focus-ring-color auto 1px;
+
+                &::before
+                {
+                    opacity: 1;
+                }
+            }
+
+            &:checked + .filter-form__label::before
+            {
+                width: 23px;
+                background-image: url(../img/background/checkbox-on.svg);
+            }
+
+            &:disabled + .filter-form__label::before
+            {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &__options-list
+    {
+        display: flex;
+        padding: 7px 17px 7px 14px;
+    }
+
+    &__option
+    {
+        margin-right: 20px;
+
+        &:last-of-type
+        {
+            margin-right: 0;
+        }
+    }
+
+    &__label
+    {
+        font-weight: 500;
+        padding-left: 33px;
+        position: relative;
+        line-height: 18px;
+
+        &::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 22px;
+            height: 22px;
+            background-image: url(../img/background/radio-off.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        &:hover::before
+        {
+            opacity: 1;
+        }
+    }
+
+    &__range-controls
+    {
+        
+    }
+
+    &__button
+    {
+        font-weight: 500;
+        background: transparentize($color: $color-white, $amount: 0.8);
+        border: 2px solid $color-white;
+        border-radius: 20px;
+        padding: 7px 27px 7px 27px;
+        align-self: flex-end;
+        line-height: 18px;
+        margin-left: 1px;
+
+        &:hover,
+        &:focus
+        {
+            background-color: $color-white;
+            color: $color-black;
+        }
+
+        &:active
+        {
+            box-shadow: inset 0px 2px 1px $basic-grey-shadow;
+        }
+    }
+}
+
+.range-controls
+{
+    position: relative;
+    height: 36px;
+    padding: 17px 21px 0 21px;
+
+    &__scale
+    {
+        height: 2px;
+        background-color: transparentize($color: $basic-white-background, $amount: 0.5);
+        width: 176px;
+    }
+
+    &__bar
+    {
+        position: relative;
+        width: 106px;
+        left: 16px;
+        height: 2px;
+        background-color: $basic-white-background;
+    }
+
+    &__toggle
+    {
+        position: absolute;
+        top: 8px;
+        left: 34px;
+        width: 20px;
+        height: 20px;
+        padding: 0px;
+        border: 8px solid $color-white;
+        background-color: $color-grey;
+        border-radius: 50%;
+        box-shadow: 0 2px 1px 0 transparentize($color: $color-grey, $amount: 0.7);
+        cursor: pointer;
+
+        &_max
+        {
+            left: 132px;
+        }
+    }
+}
+
+.products
+{
+    border-bottom: 1px solid transparentize($color: $color-white, $amount: 0.8);
+    display: flex;
+    flex-direction: column;
+
+    &__products-list
+    {
+        margin-bottom: 40px;
+    }
+
+    &__pagination
+    {
+        margin-bottom: 29px;
+        margin-left: auto;
+    }
+}
+
+.pagination
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item
+    {
+        margin-right: 4px;
+        
+        &:last-of-type
+        {
+            margin-right: 0;
+        }
+    }
+
+    &__link
+    {
+        display: flex;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+
+        &:hover,
+        &:focus
+        {
+            background-color: transparentize($color: $color-white, $amount: 0.8);
+        }
+
+        &_active:not(&_arrow),
+        &:active
+        {
+            background-color: $color-white;
+            color: $color-black;
+        }
+
+        &_arrow
+        {
+            width: 8px;
+            height: 12px;
+            background-image: url(../img/background/icon-right-small.svg);
+            background-repeat: no-repeat;
+
+            &:hover,
+            &:focus
+            {
+                background-color: transparent;
+            }
+
+            &:active
+            {
+                background-color: transparent;
+            }
+        }
+
+        &_arrow_left
+        {
+            transform: rotate(180deg);
+            margin-right: 12px;
+        }
+
+        &_arrow_right
+        {
+            margin-left: 14px;
+        }
+
+        &_disabled
+        {
+            opacity: 0.2;
+        }
+    }
+}

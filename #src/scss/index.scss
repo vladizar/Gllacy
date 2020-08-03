@@ -1,0 +1,355 @@
+.offer
+{
+    padding-top: 272px;
+    position: relative;
+    
+    &__items-list
+    {
+        margin-bottom: 40px;
+    }
+
+    &__item
+    {
+
+    }
+
+    &__item-title
+    {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 60px;
+        text-align: center;
+        margin: 0 auto 28px auto;
+        width: 672px;
+    }
+
+    &__button
+    {
+        margin: 0 auto;
+        font-size: 32px;
+        line-height: 44px;
+        padding-top: 8px;
+        padding-bottom: 11px;
+    }
+
+    &__slider-controls
+    {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        bottom: 23px;
+        left: 0;
+    }
+
+    &__slider-control
+    {
+        display: block;
+        background-color: transparent;
+        width: 21px;
+        height: 21px;
+        border: 2px solid $color-white;
+        border-radius: 50%;
+        margin-right: 8px;
+        padding: 0;
+
+        
+        &:not(&_active):hover,
+        &:not(&_active):focus
+        {
+            background-color: transparentize($color: $color-white, $amount: 0.6);
+        }
+        
+        &_active,
+        &:not(&_active):active
+        {
+            background-color: $color-white;
+        }
+    }
+}
+
+.promotion
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__article
+    {
+        padding: 15px 22px 23px 16px;
+        background-repeat: no-repeat;
+        margin-bottom: 40px;
+
+        &_raspberry
+        {
+            background-color: $average-raspberry-bg-color;
+            background-image: url(../img/background/raspberry.jpg);
+        }
+        
+        &_chocolate
+        {
+            background-color: $average-chocolate-bg-color;
+            background-image: url(../img/background/chocolate.jpg);
+        }
+    }
+
+    &__article-title
+    {
+        margin: 0 0 16px 0;
+        font-size: 35px;
+        line-height: 41px;
+        font-weight: 700;
+    }
+
+    &__article-text
+    {
+        margin: 0 0 42px 0;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 700;
+    }
+
+    &__button
+    {
+        margin-left: auto;
+        padding: 11px 22px 13px 22px;
+    }
+}
+
+.hot-items
+{
+    &__products-list
+    {
+        margin-bottom: 4px;
+    }
+}
+
+.advantages
+{
+    color: $color-black;
+    padding: 24px 20px 36px 20px;
+    background-color: $average-waffel-bg-color;
+    background-image: url(../img/background/waffel-pattern.jpg);
+    background-repeat: repeat;
+
+    &__title
+    {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 0 0 7px 0;
+    }
+
+    &__items-list
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: -19px;
+    }
+
+    &__item
+    {
+        width: 540px;
+        padding-left: 55px;
+        padding-top: 10px;
+        position: relative;
+        margin-bottom: 12px;
+
+        &::before
+        {
+            display: block;
+            content: "";
+            width: 49px;
+            height: 49px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &_ice-cream::before
+        {
+            background-image: url(../img/background/ice-cream.svg);
+        }
+
+        &_eco:before
+        {
+            background-image: url(../img/background/eco.svg);
+        }
+
+        &_cow:before
+        {
+            background-image: url(../img/background/cow.svg);
+        }
+
+        &_temperature:before
+        {
+            background-image: url(../img/background/thermometer.svg);
+        }
+    }
+
+    &__item-description
+    {
+        margin: 0;
+    }
+}
+
+.articles-wrapper
+{
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog
+{
+    &__article
+    {
+        
+    }
+}
+
+.blog-article
+{
+    color: $color-black;
+    padding: 19px 20px 88px 20px;
+    background-color: $color-white;
+    background-image: url(../img/background/strawberry.jpg);
+    background-repeat: no-repeat;
+    
+    &__type
+    {
+        margin: 0 0 1px 0;
+        font-weight: 500;
+    }
+
+    &__title
+    {
+        margin: 0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        width: 290px;
+    }
+
+    &__link
+    {
+        display: block;
+        text-decoration: underline;
+    }
+}
+
+.mailing
+{
+    &__article
+    {
+
+    }
+}
+
+.mailing-article
+{
+    padding: 24px 16px 34px 20px;
+    background-color: $basic-white-background;
+    border: 6px solid $basic-white-background;
+    border-image: url(../img/background/bg-post.svg) 8 round round;
+
+    &__description
+    {
+        color: $color-grey-dark;
+        width: 512px;
+        margin: 0 0 40px 0;
+    }
+
+    &__form
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__input
+    {
+        border-radius: 6px;
+        flex-grow: 1;
+        margin-right: 10px;
+        line-height: 24px;
+        padding-top: 10px;
+        padding-bottom: 8px;
+
+        &:hover,
+        &:focus
+        {
+            padding-top: 9px;
+            padding-bottom: 7px;
+        }
+    }
+
+    &__button
+    {
+        flex-shrink: 0;
+        padding: 8px 19px 10px 19px;
+        margin-right: 5px;
+    }
+}
+
+.contacts
+{
+    position: relative;
+    padding: 62px 0;
+    
+    &__map
+    {
+        border: 0;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        z-index: 10;
+    }
+
+    &__contacts-article
+    {
+        margin-left: auto;
+        position: relative;
+        z-index: 50;
+    }
+}
+
+.contacts-article
+{
+    padding: 31px 25px;
+    width: 303px;
+    background-color: $fefefefefefefefefe;
+
+    &__info-block
+    {
+        margin-bottom: 28px;
+
+        &:first-of-type
+        {
+            margin-bottom: 21px;
+        }
+    }
+
+    &__text
+    {
+        margin: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-black;
+    }
+
+    &__important-text
+    {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        font-style: normal;
+        color: $color-black;
+    }
+
+    &__button
+    {
+        padding: 9px 28px 10px 28px;
+    }
+}
