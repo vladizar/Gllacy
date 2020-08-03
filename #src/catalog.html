@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="body">
     <div class="wrapper">
         <header class="header">
             @@include("_header.html", {catalog: true})
@@ -25,25 +25,37 @@
                     <fieldset class="filter-form__fieldset">
                         <legend class="filter-form__fieldset-title">Сортировка:</legend>
     
-                        <label class="visually-hidden" for="filter-form-sort-by">Сортировать</label>
-                        <select class="filter-form__input filter-form__input_select" name="sort-by" id="filter-form-sort-by" required>
-                            <option value="popularity" selected>по популярности</option>
-                            <option value="cheap-first">сначала недорогие</option>
-                            <option value="expensive-first">сначала дорогие</option>
-                            <option value="fatness">по жирности</option>
-                        </select>
+                        <div class="filter-form__select-group filter-form__bg-input">
+                            <select class="filter-form__input filter-form__input_select" name="sort-by" id="filter-form-sort-by">
+                                <option value="popularity" selected>по популярности</option>
+                                <option value="cheap-first">сначала недорогие</option>
+                                <option value="expensive-first">сначала дорогие</option>
+                                <option value="fatness">по жирности</option>
+                            </select>
+                            <label for="filter-form-sort-by">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+                                <span class="visually-hidden">Сортировать</span>
+                            </label>
+                        </div>
                     </fieldset>
     
                     <fieldset class="filter-form__fieldset">
                         <legend class="filter-form__fieldset-title">Цена: 100 ₽ – 500 ₽</legend>
     
-                        
+                        <div class="filter-form__range-controls range-controls filter-form__bg-input">
+                            <div class="range-controls__scale">
+                                <div class="range-controls__bar"></div>
+                            </div>
+
+                            <div class="range-controls__toggle range-controls__toggle_min" tabindex="0"></div>
+                            <div class="range-controls__toggle range-controls__toggle_max" tabindex="0"></div>
+                        </div>
                     </fieldset>
     
                     <fieldset class="filter-form__fieldset">
                         <legend class="filter-form__fieldset-title">Жирность:</legend>
     
-                        <ol class="filter-form__options-list">
+                        <ol class="filter-form__options-list filter-form__bg-input">
                             <li class="filter-form__option">
                                 <input class="visually-hidden filter-form__input_radio" type="radio" value="0" name="fatness" id="filter-form-fatness-0">
                                 <label class="filter-form__label" for="filter-form-fatness-0">0%</label>
@@ -69,7 +81,7 @@
                     <fieldset class="filter-form__fieldset">
                         <legend class="filter-form__fieldset-title">Наполнители:</legend>
     
-                        <ul class="filter-form__options-list">
+                        <ul class="filter-form__options-list filter-form__bg-input">
                             <li class="filter-form__option">
                                 <input class="visually-hidden filter-form__input_checkbox" type="checkbox" name="chocolate" id="filter-form-chocolate" checked>
                                 <label class="filter-form__label" for="filter-form-chocolate">шококладные</label>
@@ -114,7 +126,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочное с апельсиновым
                                 джемом и цитрусовой стружкой
                             </a>
@@ -132,7 +144,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочно-кофейное с кусочками
                                 шоколада
                             </a>
@@ -150,7 +162,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочно-клубничное 
                                 с присыпкой из белого шоколада
                             </a>
@@ -168,8 +180,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочное крем-брюле 
+                            <a class="products-list__item-link link" href="#">
+                                Сливочное крем-брюле <br>
                                 с карамельной подливкой 
                             </a>
                         </p>
@@ -186,8 +198,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочное с брусничным
+                            <a class="products-list__item-link link" href="#">
+                                Сливочное с брусничным <br>
                                 джемом
                             </a>
                         </p>
@@ -204,7 +216,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочно-черничное с цельными
                                 ягодами черники 
                             </a>
@@ -222,7 +234,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочно-лимонное с
                                 карамельной присыпкой
                             </a>
@@ -240,7 +252,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочное с шоколадной
                                 стружкой
                             </a>
@@ -258,8 +270,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочно-ванильное
+                            <a class="products-list__item-link link" href="#">
+                                Сливочно-ванильное <br>
                                 с кусочками шоколада
                             </a>
                         </p>
@@ -276,8 +288,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочноe с ментоловым
+                            <a class="products-list__item-link link" href="#">
+                                Сливочноe с ментоловым <br>
                                 сиропом
                             </a>
                         </p>
@@ -294,7 +306,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочное с кусочками черного
                                 шоколада
                             </a>
@@ -312,7 +324,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочное с мятным сиропом 
                             </a>
                         </p>
@@ -323,13 +335,13 @@
     
                 <ol class="pagination products__pagination">
                     <li class="pagination__item">
-                        <a class="pagination__link pagination__link_arrow pagination__link_arrow_left">
+                        <a class="pagination__link pagination__link_arrow pagination__link_arrow_left pagination__link_disabled">
                             <span class="visually-hidden">Предидущая страница списка</span>
                         </a>
                     </li>
     
                     <li class="pagination__item">
-                        <a class="pagination__link" href="#">1<span class="visually-hidden">ая страница списка</span></a>
+                        <a class="pagination__link pagination__link_active" href="#">1<span class="visually-hidden">ая страница списка</span></a>
                     </li>
     
                     <li class="pagination__item">
@@ -361,7 +373,5 @@
             @@include("_footer.html")
         </footer>
     </div>
-
-    <script src="js/script.min.js"></script>
 </body>
 </html>

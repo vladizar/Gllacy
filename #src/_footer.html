@@ -3,19 +3,27 @@
 
     <ul class="socials-list footer__socials-list">
         <li class="socials-list__item">
-            <a class="socials-list__link" href="#"><span class="visually-hidden">Facebook</span></a>
+            <a class="socials-list__link socials-list__link_fb" href="#">
+                <span class="visually-hidden">Facebook</span>
+            </a>
         </li>
         
         <li class="socials-list__item">
-            <a class="socials-list__link" href="#"><span class="visually-hidden">VKontakte</span></a>
+            <a class="socials-list__link socials-list__link_vk" href="#">
+                <span class="visually-hidden">VKontakte</span>
+            </a>
         </li>
     
         <li class="socials-list__item">
-            <a class="socials-list__link" href="#"><span class="visually-hidden">Instagram</span></a>
+            <a class="socials-list__link socials-list__link_insta" href="#">
+                <span class="visually-hidden">Instagram</span>
+            </a>
         </li>
     
         <li class="socials-list__item">
-            <a class="socials-list__link" href="#"><span class="visually-hidden">Twitter</span></a>
+            <a class="socials-list__link socials-list__link_twit" href="#">
+                <span class="visually-hidden">Twitter</span>
+            </a>
         </li>
     </ul>
 </div>
@@ -24,21 +32,25 @@
     <h2 class="visually-hidden">Юридические бумажки</h2>
 
     <ul class="documents-list footer__documents-list">
-        <li class="documents-list__item">
-            <a class="documents-list__link" href="#">Для поставщиков</a>
-        </li>
+        <div class="documents-list__column">
+            <li class="documents-list__item documents-list__item_heart">
+                <a class="documents-list__link link" href="#">Для поставщиков</a>
+            </li>
+
+            <li class="documents-list__item">
+                <a class="documents-list__link link" href="#">О производстве</a>
+            </li>
+        </div>
+    
+        <div class="documents-list__column">
+            <li class="documents-list__item">
+                <a class="documents-list__link link" href="#">Наши документы</a>
+            </li>
         
-        <li class="documents-list__item">
-            <a class="documents-list__link" href="#">Наши документы</a>
-        </li>
-    
-        <li class="documents-list__item">
-            <a class="documents-list__link" href="#">О производстве</a>
-        </li>
-    
-        <li class="documents-list__item">
-            <a class="documents-list__link" href="#">Экологические стандарты</a>
-        </li>
+            <li class="documents-list__item">
+                <a class="documents-list__link link" href="#">Экологические стандарты</a>
+            </li>
+        </div>
     </ul>
 </div>
 
@@ -47,7 +59,7 @@
 
     <p class="credits footer__credits">
         Сделано в
-        <a class="credits__link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
+        <a class="credits__link link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
         © 2019
     </p>
 </div>

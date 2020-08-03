@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
-    <div class="wrapper wrapper_first-slide">
+<body class="body body_slide body_slide1">
+    <div class="wrapper">
         <header class="header">
             @@include("_header.html", {catalog: false})
         </header>
@@ -29,7 +29,7 @@
                         <a class="button offer__button" href="#">Давайте оба!</a>
                     </li>
 
-                    <li class="offer__item">
+                    <li class="offer__item hidden">
                         <h3 class="offer__item-title">
                             Шоколадный пломбир
                             и лимонный сорбет
@@ -38,9 +38,9 @@
                         <a class="button offer__button" href="#">Давайте оба!</a>
                     </li>
 
-                    <li class="offer__item">
+                    <li class="offer__item hidden">
                         <h3 class="offer__item-title">
-                            Пломбир с помадкой
+                            Пломбир с помадкой <br>
                             и клубничный щербет
                         </h3>
                         
@@ -49,7 +49,7 @@
                 </ol>
                 
                 <div class="offer__slider-controls">
-                    <button class="offer__slider-control" type="button">
+                    <button class="offer__slider-control offer__slider-control_active" type="button">
                         <span class="visually-hidden">Первый слайд</span>
                     </button>
 
@@ -93,7 +93,7 @@
                 <h2 class="visually-hidden">Самые популярные товары</h2>
                 
                 <ul class="products-list hot-items__products-list">
-                    <li class="products-list__item">
+                    <li class="products-list__item products-list__item_hit">
                         <img class="products-list__item-pic" src="img/content/ice-cream-yellow.png" alt="Фото сливочного мороженого с апельсиновым джемом и цитрусовой стружкой" width="267" height="267">
                         
                         <p class="products-list__item-price">
@@ -102,7 +102,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочное с апельсиновым
                                 джемом и цитрусовой стружкой
                             </a>
@@ -111,7 +111,7 @@
                         <a class="button products-list__button" href="#">Быстрый просмотр</a>
                     </li>
                     
-                    <li class="products-list__item">
+                    <li class="products-list__item products-list__item_hit">
                         <img class="products-list__item-pic" src="img/content/ice-cream-brown.png" alt="Фото cливочно-кофейного мороженого с кусочками шоколада" width="267" height="267">
 
                         <p class="products-list__item-price">
@@ -120,7 +120,7 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
+                            <a class="products-list__item-link link" href="#">
                                 Сливочно-кофейное с кусочками
                                 шоколада
                             </a>
@@ -129,7 +129,7 @@
                         <a class="button products-list__button" href="#">Быстрый просмотр</a>
                     </li>
 
-                    <li class="products-list__item">
+                    <li class="products-list__item products-list__item_hit">
                         <img class="products-list__item-pic" src="img/content/ice-cream-pink.png" alt="Фото сливочно-клубничного мороженого с присыпкой из белого шоколада" width="267" height="267">
                         
                         <p class="products-list__item-price">
@@ -138,8 +138,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочно-клубничное 
+                            <a class="products-list__item-link link" href="#">
+                                Сливочно-клубничное <br>
                                 с присыпкой из белого шоколада
                             </a>
                         </p>
@@ -147,7 +147,7 @@
                         <a class="button products-list__button" href="#">Быстрый просмотр</a>
                     </li>
                     
-                    <li class="products-list__item">
+                    <li class="products-list__item products-list__item_hit">
                         <img class="products-list__item-pic" src="img/content/ice-cream-caramel.png" alt="Фото cливочного крем-брюле с карамельной подливкой" width="267" height="267">
 
                         <p class="products-list__item-price">
@@ -156,8 +156,8 @@
                         </p>
                         
                         <p class="products-list__item-description">
-                            <a class="products-list__item-link" href="#">
-                                Сливочное крем-брюле 
+                            <a class="products-list__item-link link" href="#">
+                                Сливочное крем-брюле <br>
                                 с карамельной подливкой 
                             </a>
                         </p>
@@ -174,7 +174,7 @@
                 </h2>
 
                 <ul class="advantages__items-list">
-                    <li class="advantages__item">
+                    <li class="advantages__item advantages__item_ice-cream">
                         <p class="advantages__item-description">
                             Все наше мороженое изготавливается на собственном
                             производстве, с использованием современного оборудования
@@ -182,7 +182,7 @@
                         </p>
                     </li>
                     
-                    <li class="advantages__item">
+                    <li class="advantages__item advantages__item_cow">
                         <p class="advantages__item-description">
                             Закупка ингредиентов производится только у проверенных
                             фермерских хозяйств и компаний, с которыми нас связывает
@@ -190,7 +190,7 @@
                         </p>
                     </li>
                     
-                    <li class="advantages__item">
+                    <li class="advantages__item advantages__item_eco">
                         <p class="advantages__item-description">
                             Для приготовления мороженого используются настоящие
                             сливки и молоко высочайшего качества. Все дополнительные
@@ -199,74 +199,85 @@
                         </p>
                     </li>
                     
-                    
-                    <li class="advantages__item">
+                    <li class="advantages__item advantages__item_temperature">
                         <p class="advantages__item-description">
-                            Доставка нашего мороженого до заказчиков осуществляется в
-                            специальном термопаке, который не дает мороженому
+                            Доставка нашего мороженого до заказчиков осуществляется <br>
+                            в специальном термопаке, который не дает мороженому
                             растаять в пути и позволяет сохранить превосходный вкус.
                         </p>
                     </li>
                 </ul>
             </section>
 
-            <section class="blog">
-                <h2 class="visually-hidden">Мы ведем блог!</h2>
-
-                <article class="article blog-article blog__article">
-                    <p class="blog-article__type">
-                        Новое в нашем блоге
-                    </p>
-                    
-                    <h3 class="blog-article__title">
-                        <a class="blog-article__link" href="#">
-                            10 способов сервировки
-                            фруктовых щербетов 
-                            к столу
-                        </a>
-                    </h3>
-                </article>
-            </section>
-
-            <section class="mailing">
-                <h2 class="visually-hidden">У нас есть рассылка!</h2>
-
-                <article class="article mailing-article mailing__article">
-                    <h3 class="visually-hidden">Подписка на рассылку!</h3>
-
-                    <p class="mailing-article__description">
-                        Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе
-                        всего самого вкусного, что у нас происходит. Обещаем не спамить
-                        и не слать всякой ненужной ерунды. Честно =)
-                    </p>
-                    
-                    <form class="mailing-article__form" action="https://echo.htmlacademy.ru" method="post">
-                        <label class="visually-hidden" for="mailing-article-form-email">Ваш e-mail:</label>
-                        <input class="input mailing-article__input" type="email" name="email" id="mailing-article-form-email" placeholder="email@example.com" required>
+            <div class="articles-wrapper">
+                <section class="blog">
+                    <h2 class="visually-hidden">Мы ведем блог!</h2>
+    
+                    <article class="article blog-article blog__article">
+                        <p class="blog-article__type">
+                            Новое в нашем блоге
+                        </p>
                         
-                        <button class="button mailing-article__button" type="submit">Отправить</button>
-                    </form>
-                </article>
-            </section>
+                        <h3 class="blog-article__title">
+                            <a class="blog-article__link" href="#">
+                                10 способов сервировки
+                                фруктовых щербетов <br>
+                                к столу
+                            </a>
+                        </h3>
+                    </article>
+                </section>
+    
+                <section class="mailing">
+                    <h2 class="visually-hidden">У нас есть рассылка!</h2>
+    
+                    <article class="article mailing-article mailing__article">
+                        <h3 class="visually-hidden">Подписка на рассылку!</h3>
+    
+                        <p class="mailing-article__description">
+                            Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе
+                            всего самого вкусного, что у нас происходит. Обещаем не спамить
+                            и не слать всякой ненужной ерунды. Честно =)
+                        </p>
+                        
+                        <form class="mailing-article__form" action="https://echo.htmlacademy.ru" method="post">
+                            <label class="visually-hidden" for="mailing-article-form-email">Ваш e-mail:</label>
+                            <input class="input mailing-article__input" type="email" name="email" id="mailing-article-form-email" placeholder="email@example.com" required>
+                            
+                            <button class="button mailing-article__button" type="submit">Отправить</button>
+                        </form>
+                    </article>
+                </section>
+            </div>
             
             <section class="contacts">
-                <div class="contacts__map"></div>
+                <h2 class="visually-hidden">Как нас найти?</h2>
+                
+                <h3 class="visually-hidden">Мы на карте</h3>
+                <iframe class="contacts__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.601034404009!2d30.326072966790857!3d59.93876215805273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sua!4v1596401883692!5m2!1sru!2sua" width="1200" height="430" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 
                 <article class="article contacts-article contacts__contacts-article">
-                    <p class="contacts-article__text">
-                        Адрес главного офиса
-                        и офлайн-магазина:
+                    <h3 class="visually-hidden">Наши контакты</h3>
+                    
+                    <div class="contacts-article__info-block">
+                        <p class="contacts-article__text">
+                            Адрес главного офиса <br>
+                            и офлайн-магазина:
+                        </p>
+    
                         <address class="contacts-article__important-text">
                             ул. Большая Конюшенная,
                             19/8, Санкт-Петербург
                         </address>
-                    </p>
+                    </div>
 
-                    <p class="contacts-article__text">
-                        Для заказов по телефону:
-                        <a class="contacts-article__important-text" href="tel:+88124502525">8 812 450-25-25</a>
-                        (с 10 до 20 ежедневно)
-                    </p>
+                    <div class="contacts-article__info-block">
+                        <p class="contacts-article__text">
+                            Для заказов по телефону:
+                            <a class="contacts-article__important-text" href="tel:+88124502525">8 812 450-25-25</a>
+                            (с 10 до 20 ежедневно)
+                        </p>
+                    </div>
 
                     <a class="button contacts-article__button" href="#">Форма обратной связи</a>
                 </article>
@@ -277,6 +288,8 @@
             @@include("_footer.html")
         </footer>
     </div>
+
+    @@include("_popup-feedback.html")
 
     <script src="js/script.min.js"></script>
 </body>
